@@ -1,0 +1,43 @@
+{
+  "name": "multiflexer",
+  "version": "1.0.0",
+  "scripts": {
+    "copyConfig": "node ./scripts/pullConfig.mjs",
+    "start": "node ./build/main.js",
+    "build": "tsc",
+    "build:copy": "pnpm copyConfig && tsc",
+    "dev": "pnpm tsc && node --env-file=.env ./build/main.js",
+    "getLogs": "node --env-file=.env ./scripts/getLogs.js",
+    "leaderboard": "node --env-file=.env ./scripts/leaderboard.js",
+    "encode": "node --no-warnings --no-deprecation  --env-file=.env ./scripts/encodeTable.js"
+  },
+  "main": "main.js",
+  "author": "Minters",
+  "private": true,
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/minimist": "^1.2.5",
+    "@types/node": "^20.14.12",
+    "@types/pg": "^8.11.11",
+    "@types/ws": "^8.5.10",
+    "copyfiles": "^2.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "minimist": "^1.2.8",
+    "pg": "^8.13.3",
+    "redis": "^4.7.0",
+    "viem": "^2.19.2",
+    "ws": "^8.18.0",
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7"
+  },
+  "engines": {
+    "node": "22.x",
+    "pnpm": "9.x || 10.x"
+  }
+}
