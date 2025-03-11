@@ -17,8 +17,9 @@ Any field type that is bigger than 64 bits onchain is represended as hex string.
 
 ## Usage
 
-first copy config file (contract.json) to root directory
-this file contains:
+First copy config file (contract.json) to root directory. You can find it under this [link](https://szpieg.prod.siusia.com/)
+
+This file contains:
 - the world info including address and deploy block number
 - ABI
 - chain congifuration with rpc url
@@ -87,3 +88,7 @@ You have to build the project first since it relies on MUD table config from con
 ```bash
 REDIS_URL="url" WORLD_ADDRESS="0xabcd" pnpm getLogs --table QuestlineRewards -o rewards.json
 ```
+
+## Contribution
+
+Feel free to open a pull request if you find a bug
