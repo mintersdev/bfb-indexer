@@ -25,7 +25,8 @@ This file contains:
 - chain congifuration with rpc url
 - MUD table configuration
 
-if any of those values are missing the app will try to use default values (see [config.ts](./src/config/config.ts))
+World address should be present in this file. Alternatively WORLD_ADDRESS env variable should be set. 
+If any of other values are missing the app will try to use default values (see [config.ts](./src/config/config.ts))
 
 
 ```bash
@@ -36,7 +37,7 @@ REDIS_URL="url" pnpm start
 
 ## WS API
 ### get
-Made to get current state of the world. It returns the most recent data from the contract in MUD format. That's what the front uses at the entrance of the game
+Made to get current state of the world. It returns the most recent decoded data. That's what the front uses at the entrance of the game
 
 
 ```json
@@ -60,7 +61,8 @@ request is basically the same as get
 ```json
 "body": {
     "type": "subscribe",
-    ...
+    "group": ["Battle"],
+    "battleId": 1
 }
 ```
 
